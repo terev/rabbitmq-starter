@@ -1,0 +1,13 @@
+{
+  "name": "worker_q_starter",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "amqplib": "^0.5.2",
+    "retry": "^0.10.1"
+  },
+  "scripts": {
+    "start": "node worker.js"
+  }
+}

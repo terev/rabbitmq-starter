@@ -1,0 +1,14 @@
+version: "3"
+services:
+  worker_example:
+    build: workers/example
+    image: worker_example
+    depends_on:
+      - rabbit1
+    networks:
+      - backend
+    environment:
+      - RABBIT_HOST
+
+networks:
+  backend:

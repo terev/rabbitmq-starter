@@ -1,0 +1,21 @@
+version: "3"
+services:
+    rabbit1:
+        environment:
+          - RABBITMQ_ERLANG_COOKIE
+          - RABBITMQ_SERVER_ADDITIONAL_ERL_ARGS
+        networks:
+          - backend
+        hostname: rabbit1
+        container_name: rabbit1
+        image: "rabbitmq:3-management"
+        ports:
+          - "15672:15672"
+          - "5672:5672"
+        tty: true
+        volumes:
+          - ./rabbit1:/var/lib/rabbitmq
+          - ./conf/:/etc/rabbitmq/
+
+networks:
+    backend:
